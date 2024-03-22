@@ -1,0 +1,31 @@
+<%= form_with model: article do |form| %>
+  <div class="d-flex justify-content-between">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="d-flex justify-content-between">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :user_id, value: (current_user.moderator? || current_user.admin?) ? article.user_id : current_user.id %>
+  </div>
+      
+  <p class="d-flex justify-content-between">
+  <%= form.label :status %>
+  <%= form.select :status, Visible::VALID_STATUSES, selected: article.status || 'public' %>
+</p>
+  <div class="text-center">
+    <%= form.submit %>
+  </div>
+  
+
+<% end %>

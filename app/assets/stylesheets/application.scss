@@ -1,0 +1,79 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+// *= require_tree .
+// *= require_self
+ */
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+ /* Add this to your custom stylesheet (e.g., application.css or application.scss) */
+.bg-indigo {
+    background-color: #b1d8d886; /* Adjust the color code as needed */
+  }
+.bg-light-grey {
+    background-color: rgb(234, 253, 237);
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1; /* Use flex to make the main content take up remaining space */
+  }
+  
+  footer {
+    background-color: #f5baf0;
+    color: #080808;
+    padding: 8px; /* Add padding around the content within the footer */
+    text-align: center;
+    margin-top: auto; /* Use auto margin to push the footer to the bottom */
+  }
+  
+  /* Optionally, you can add styles for links within the footer */
+  footer a {
+    color: #080808;
+    text-decoration: none;
+  }
+  .container {
+    width: 100%;
+    max-width: 600px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    border: 1px solid #d4f38b;
+    border-radius: 5px;
+    background-color: #aae6d7; /* Light blue color */
+  }
+  
+  .sign-up-form {
+    margin-top: 20px;
+  }
+  
+  .field {
+    margin-bottom: 15px;
+  }
+  
+  .actions {
+    text-align: center;
+  }
+  
+  .width-60 {
+    width: 60%;
+  }
+  
+  /* Add any additional styling as needed */
+  
+  

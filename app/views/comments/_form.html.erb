@@ -1,0 +1,23 @@
+<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+  <p class="d-flex justify-content-between">
+  <%= form.label :commenter %>
+  
+  </p>
+
+  <p class="d-flex justify-content-between">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </p>
+  
+  <p class="d-flex justify-content-between">
+  <%= form.label :status %>
+  <%= form.select :status, Visible::VALID_STATUSES, selected: 'public' %>
+</p>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+
+
+  <p class="text-center">
+    <%= form.submit %>
+  </p>
+<% end %>
